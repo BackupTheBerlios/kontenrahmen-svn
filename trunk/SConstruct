@@ -1,0 +1,28 @@
+# -*- mode: python -*-
+#
+# main SConstruct file of the Kontenrahmen-Project
+# (c) Copyright 2006 by Hartmut Goebel <h.goebel@goebel-consult.de>
+#
+##########
+#
+# Build-Targets:
+#
+# download -- download files from external sources (esp.
+#             finanzamtsliste) and rebuild dependencies
+#
+#
+
+# Store signatures in ".sconsign.dbmlite" in the top-level directory.
+SConsignFile()
+
+env = Environment()
+env.AppendENVPath('PYTHONPATH', Dir('#/lib').abspath)
+
+Export('env')
+
+env.SConscript(dirs=[Dir('finanzamtsliste'),
+                     #Dir('bilanz', build_dir),
+                     #Dir('guv', build_dir),
+                     #Dir('bwa', build_dir),
+                     #Dir('skr03', build_dir),
+                     ])

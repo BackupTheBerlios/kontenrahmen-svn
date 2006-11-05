@@ -1,0 +1,133 @@
+#!/usr/bin/env python
+# -*- coding: latin-1 -*-
+
+__copyright__ = "Copyright 2006 by Hartmut Goebel <h.goebel@goebel-consult.de>"
+
+import xlrd
+import optparse
+import csv
+import cStringIO, codecs
+
+class _Encoder:
+    # helper since getincrementalencoder is only available
+    # starting Python 2.5
+    def __init__(self, encoding):
+        self._encoder = codecs.getencoder(encoding)
+    def encode(self, s):
+        return self._encoder(s)[0]
+
+# based on http://www.python.org/doc/2.5/lib/csv-examples.html
+class UnicodeWriter:
+    """
+    A CSV writer which will write rows to CSV file "f",
+    which is encoded in the given encoding.
+    """
+
+    def __init__(self, f, dialect=csv.excel, encoding="utf-8",
+                 remove_linebreaks=False, **kwds):
+        # Redirect output to a queue
+        self.queue = cStringIO.StringIO()
+        self.writer = csv.writer(self.queue, dialect=dialect, **kwds)
+        self.stream = f
+        self.remove_linebreaks = remove_linebreaks
+        try:
+            # requires python 2.5 :-(
+            self.encoder = codecs.getincrementalencoder(encoding)()
+        except AttributeError:
+            self.encoder = _Encoder(encoding)
+
+    def writerow(self, row):
+        if self.remove_linebreaks:
+            row= [s.replace('\n', ' ') for s in row]
+        self.writer.writerow([s.encode("utf-8") for s in row])
+        data = self.queue.getvalue()
+        data = data.decode("utf-8")
+        data = self.encoder.encode(data)
+        self.stream.write(data)
+        self.queue.truncate(0)
+
+    def writerows(self, rows):
+        for row in rows:
+            self.writerow(row)
+            
+
+def readSheet(filename, sheetname=None, sheetindex=0, keep_floats=True):
+
+    def strip_float(row):
+        for col in row:
+            if col.ctype == xlrd.FNU: # number/float
+                v = int(col.value)
+                if v == col.value:
+                    col.value = v
+    
+    book = xlrd.open_workbook(filename)
+    if sheetname:
+        sheet = book.sheet_by_name(sheetname)
+    else:
+        sheet = book.sheet_by_index(sheetindex)
+    print sheetname, sheetindex, sheet
+    for row in range(sheet.nrows):
+        row = sheet.row(row)
+        if not keep_floats:
+            strip_float(row) # changes in-place
+        yield [ unicode(col.value).strip() for col in row ]
+
+
+def dumpCSV(fileobj, rows, encoding, remove_linebreaks):
+    csv_writer = UnicodeWriter(fileobj, encoding=encoding,
+                               remove_linebreaks=remove_linebreaks)
+    for row in rows:
+        csv_writer.writerow(row)
+
+
+def list_sheets(filename):
+    book = xlrd.open_workbook(filename)
+    for i, name in enumerate(book.sheet_names()):
+        print i, name
+
+
+def main(filename, sheetname=None, sheetindex=0, encoding=None, **kw):
+    import sys
+    encoding = encoding or sys.getdefaultencoding()
+    rows = readSheet(filename,
+                     sheetname=sheetname, sheetindex=sheetindex,
+                     keep_floats=kw.get('keep_floats', False))
+    dumpCSV(sys.stdout, rows, encoding=encoding,
+            remove_linebreaks=kw.get('remove_linebreaks', False))
+
+
+if __name__ == '__main__':
+    from optparse import OptionParser
+    parser = OptionParser('usage: %prog [options] filename')
+
+    group = parser.add_option_group('Input selection')
+    group.add_option('-l', '--list-sheets', default=False,
+                      action="store_true", dest='list_sheets',
+                      help='print list of sheets in this file/book')
+    group.add_option('--sheetname', default=None,
+                      action="store", dest='sheetname',
+                      help='select sheet by name (defaults to first sheet)')
+    group.add_option('--sheet-index', default=0,
+                      action="store", dest='sheetindex',
+                      help='select sheet by index (defaults to first sheet)')
+
+    group = parser.add_option_group('Output options')
+    group.add_option('--encoding', default='iso-8859-15',
+                      action="store", dest='encoding')
+    group.add_option('--remove-linebreaks', default=False,
+                      action="store_true", dest='remove_linebreaks',
+                     help="remove linebreaks from cell content")
+    group.add_option('--suppress-floats', default=True,
+                      action="store_false", dest='keep_floats',
+                     help="convert floats to int where possible")
+
+    options, args = parser.parse_args()
+    if len(args) != 1:
+        parser.error("Filename required")
+    if options.sheetname and options.sheetindex:
+        parser.error("Only one of --sheetname and --sheetindex is allowed")
+
+    if options.list_sheets:
+        list_sheets(args[0])
+    else:
+        main(args[0], **options.__dict__)

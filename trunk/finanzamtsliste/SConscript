@@ -1,0 +1,33 @@
+# -*- mode: python; coding: latin-1 -*-
+#
+# SConscript for 'Finanzamtsliste' -- Part of the Kontenrahmen-Project
+# (c) Copyright 2006 by Hartmut Goebel <h.goebel@goebel-consult.de>
+#
+
+Import('env')
+
+def wget(target, source):
+    return env.Command(target, None, 'wget -nv -O $TARGET %s' % source)
+
+def unzip(target, source):
+    return env.Command(target, source, 'unzip -d ${TARGET.dir} $SOURCE ${TARGET.file}')
+
+env.Alias('download', 
+          wget('fadat.zip',
+               'http://www.bzst.de/000_extern/01_behoerden/fadat.zip'))
+
+unzip('fadat.xls',         'fadat.zip')
+unzip('GemfaPlzFA.xls',    'fadat.zip')
+unzip('Steuernummern.xls', 'fadat.zip')
+
+env.Command('fadat.csv',
+            'fadat.xls',
+            'tools/xls2csv --remove-linebreaks --suppress-floats $SOURCE > $TARGET')
+
+env.Command('GemfaPlzFA.csv',
+            'GemfaPlzFA.xls',
+            'tools/xls2csv --suppress-floats $SOURCE > $TARGET')
+
+env.Command('Steuernummern.csv',
+            'Steuernummern.xls',
+            'tools/xls2csv --suppress-floats $SOURCE > $TARGET')
