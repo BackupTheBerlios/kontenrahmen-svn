@@ -1,0 +1,24 @@
+This is the top level of the `kontenrahmen' Subversion repository.
+
+Subdirectories are:
+
+  trunk/
+       Where mainline development occurs.
+
+  branches/
+       Alternate lines of development.
+
+  tags/
+       Stable snapshots.
+
+  vendor/
+       Information provided by a third-party entity or vendor.
+
+  www/
+       Repository for the Website.
+       
+See http://kontenrahmen.berlios.de/ for more information about the
+'kontenrahmen' projekt.
+
+See http://subversion.tigris.org/ for more information about Subversion.
+  
