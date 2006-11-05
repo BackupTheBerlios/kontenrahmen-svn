@@ -1,0 +1,138 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="kontenrahmen.css">
+<title>Kontenrahmen für Deutschland</title>
+</head>
+<body lang="de">
+
+<h1>Kontenrahmen für Deutschland</h1>
+
+<div id="Navigation">
+<ul>
+<li><a href="http://developer.berlios.de/projects/kontenrahmen/">Projektseite</a></li>
+<li><a href="http://developer.berlios.de/mail/?group_id=7635">Mailinglisten</a></li>
+</ul>
+<div class="sponsoren">
+<h3>Sponsoren</h3>
+<a href="http://www.goebel-consult.de/"><img alt="Goebel-Consult" src="images/goebel-consult.png" /></a>
+<p style="margin-top:2em">
+Hosted by <br />
+<a href="http://developer.berlios.de" title="BerliOS Developer"> <img src="http://developer.berlios.de/bslogo.php?group_id=7635" width="124px" height="32px" border="0" alt="BerliOS Developer Logo"></a>
+</p>
+</div>
+</div>
+
+<div lang="en" id="Info">
+<p>
+<img src="images/flag_gb.png" />
+This project aims to create and maintain both so-called
+"Standardkontenrahmen" (standard chart of accounts) for Germany and
+export utilities for different accounting software. These charts are
+needed by accounting software to meet german requirements. They should
+also include tax automatics and information for creating
+"Umsatzsteuervoranmeldung", "BWA", "GuV" and "Bilanz".
+</p>
+
+<p>
+This project should help open source accounting projects to get stabil
+and maintained "Standardkontenrahmen". Most of these prjects suffer
+from poor support for german requirements. Examples are
+<a href="http://www.compiere.org">Compiere</a>,
+<a href="http://www.gnue.org">GNU Enterprise</a>,
+<a href="http://www.tinyerp.org">TinyERP</a>,
+and (partly) <a href="http://www.lx-office.org">Lx-Office</a>.
+</p>
+
+<p>Since most of the content of this project is interested for German
+speaking ones only, the remaining pages are german only.
+</p>
+</div>
+
+<div id="Inhalt">
+<p>Dieses Projekt erstellt und wartet sogenannte
+"Standardkontenrahmen" für Deutschland. Die Kontenrahmen enthalten
+Informationen für Steuerautomatik, Umsatzsteuervoranmeldung (UStVA),
+Betriebswirtschaftliche Aufwertungen (BWA),
+Gewinn-und-Verlust-Rechnung (GuV) und die Bilanz (nach HGB).
+Zusätzlich gibt es Daten zu Finanzämtern und Steuernummern, wie sie
+beispielsweise für <a href="https://www.elster.de/">ELSTER</a>
+benötigt werden.
+</p>
+
+<p>Aus diesen Rohdaten werden Daten für verschiedene Open Source
+Buchhaltungsprogramme erzeugt. Damit können diese die deutschen
+Anforderungen leichter erfüllen.</p>
+
+<p>Folgende Buchhaltungsprogramme sollen unterstützt werden:
+<ul>
+<li><a href="http://www.tinyerp.org">TinyERP</a></li>
+<li><a href="http://www.lx-office.org">Lx-Office</a></li>
+<li><a href="http://www.gnucash.org">gnucash</a> (Mitarbeiter gesucht)</li>
+<li><a href="http://www.gnue.org">GNU Enterprise</a> (Mitarbeiter gesucht)</li>
+<li><a href="http://www.compiere.org">Compiere</a> (Mitarbeiter gesucht)</li>
+</ul>
+</p>
+
+
+<h3>Vorgehen</h3>
+
+Die Rohdaten stammen zu aus dem SKR03, der bei
+<a href="http://www.lx-office.org">Lx-Office</a> verwendet wird. Diese
+gilt es zu überarbeiten, Fehler zu entfernen und zu erweitern.
+
+<ul>
+<li>Den Anfang macht SKR03 (Standardkontenrahmen 03)</li>
+    <ol>
+    <li>Text und Kontonummern richtig erstellen</li>
+    <li>Steuerautomatik einrichten (Steuersätze und -konten)</li>
+    <li>Felder für Umsatzsteuer-Voranmeldung einrichten</li>
+    <li>Abschnitte düe BWA, GuV and Bilanz einstellen</li>
+    </ol>
+<li>Weitermachen mit SKR04 (Standardkontenrahmen 04)</li>
+<li>Warten der Kontenrahmen :-)</li>
+</ul>
+
+
+<h3>Aktueller Stand</h3>
+
+<ul>
+<li>Daten der Finanzämter stehen als CSV-Datei bereit. Dies beinhaltet
+    auch Beschreibungen für das Format der Steuernummern, Zuordnungen von
+    PLZ zu Finanzämtern und ähnliches.</li>
+<li>Die Gliederung der Bilanz (nach HGB) und der GuV stehen als
+    CSV-Daei bereit.</li>
+<li>Es existiert ein erster Entwurf für einen SKR03, bei dem die
+    Texte überarbeitet sind, aber nochmal geprüft werden müssen.</li>
+<li>Daten für Steueratuomatik, etc. sind bereits vorhanden, müssen
+    aber noch überarbeitet werden.</li>
+<li></li>
+</ul>
+
+<h3>Lizenz</h3>
+
+<p>Die genau Lizenz wir noch diskutiert. Fest steht aber, dass die
+Kontenrahmen und die anderen Daten für Open Source Projekte problemlos
+genutzt werden können.</p>
+
+<h3>Ähnliche Projekte</h3>
+
+<ul>
+<li><a href="http://www.lx-office.org">Lx-Office</a> hat einen recht
+    brauchbaren SKR03 (und auch einen SKR04), der dort bereits seit
+    einigen Jahren eingesetzt wird. Dieser Kontenrahmen bildet die
+    wichtigste Basis für den SKR03 dieses Projekts.</li>
+
+<li>Für <a href="http://www.compiere.org">Compiere</a> soll es einen
+    SKR03 geben, dieser ist aber nicht öffentlich verfügbar,
+    insbesondere ist er nicht Open Source. Unter <a
+    href="http://www.jetzedle.de/">http://www.jetzedle.de/</a>, gibt
+    es eine CSV-Datei, die angeblich einen SKR03 für Compiere
+    beschreibt, aber nicht den deutschen Anforderunen entspricht
+    (insb. für die Bilanz.)</li>
+</ul>
+
+</div>
+
+<div id="fusszeile">&copy; Copyright 2006</div>
+</body>
+</html>
