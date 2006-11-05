@@ -1,0 +1,91 @@
+
+Kontenplan
+
+aus Wikipedia, der freien Enzyklopädie
+http://de.wikipedia.org/wiki/Kontenplan
+
+Der Kontenplan ist das Verzeichnis aller Konten in einem Unternehmen
+oder Betrieb und elementarer Bestandteil der (doppelten) Buchführung.
+Er orientiert sich am Kontenrahmen der Wirtschaftsbranche.
+
+Abweichungen zum Kontenrahmen stellen sich fast zwangsläufig ein, weil
+das Unternehmen entweder im Kontenrahmen vorgesehene Konten bei seiner
+Tätigkeit nicht braucht oder zusätzliche, dort (noch) nicht
+vorhandene, Konten führt oder benötigt.
+
+Inhaltsverzeichnis
+
+  Beispiel: Wichtige Konten (für einen Produktionsbetrieb) nach
+          dem Produktionsablauf (GKR)
+
+       Klasse 0: (Bestandskonten) Anlagevermögen und
+                 Langfristiges Kapital
+       Klasse 1: (Bestandskonten) Finanzvermögen -
+                 Umlaufvermögen kurzfristige Verbindlichkeiten
+       Klasse 2: (Erfolgskonten) Neutrale Aufwendungen und Erträge
+       Klasse 3: (Bestandskonten) Stoffe, Bestand/ Bestände
+       Klasse 4: (Erfolgskonten) Kosten(-arten)
+       Klasse 7: (Bestandskonten) Halbfabrikate und Fertigfabrikate
+       Klasse 8: (Erfolgskonten) Ertrag/ Erträge
+       Klasse 9: (Abschlusskonten für Bilanz und GuV) Abschluss
+
+Beispiel: Wichtige Konten (für einen Produktionsbetrieb) nach dem
+Produktionsablauf (GKR)
+
+* Klasse 0: (Bestandskonten) Anlagevermögen und Langfristiges Kapital
+
+          + 01/02 Maschinen und Anlagen
+               o 010 Aktivkonto Maschinen
+          + 03 Fahrzeuge, Werkzeuge, Betriebs- und Geschäftsausstattung
+               o 030 Fahrzeuge
+          + 07 Eigenkapital
+               o 070 Passivkonto Eigenkapital
+
+* Klasse 1: (Bestandskonten) Finanzvermögen - Umlaufvermögen kurzfristige
+Verbindlichkeiten
+
+          + 10 Kasse
+          + Geldanstalten
+               o 113 Aktivkonto Banken
+          + 13 Wertpapiere (des Umlaufvermögens)
+          + 14 Aktivkonto Forderungen aus Lieferung + Leistung
+          + 16 Passivkonto Verbindlichkeiten aus Lieferung + Leistung
+          + 17 Andere Verbindlichkeiten
+               o 170 Sonstige Verbindlichkeiten
+          + 19 Passivkonto Bankschulden (= Darlehen)
+
+* Klasse 2: (Erfolgskonten) Neutrale Aufwendungen und Erträge
+
+          + 24 Zinsaufwendungen
+               o 240 Zinsaufwendungen (und Diskontaufwendungen)
+
+* Klasse 3: (Bestandskonten) Stoffe, Bestand/ Bestände
+
+          + 30 Aktivkonto Rohstoffe
+          + 39 Handelswaren
+
+* Klasse 4: (Erfolgskonten) Kosten(-arten)
+
+          + 40 Materialverbrauch
+               o 401 Rohstoffe / Rohstoffaufwand
+          + 45 Instandhaltung
+               o 450 Instandhaltung
+          + 47 Verschiedene Kosten
+               o 470 Miete
+               o 476 Bürokosten
+
+* Klasse 7: (Bestandskonten) Halbfabrikate und Fertigfabrikate
+
+* Klasse 8: (Erfolgskonten) Ertrag/ Erträge
+
+          + 84 Provisionsertrag
+          + 85 Umsatzertrag
+          + 86 Mietertrag
+
+* Klasse 9: (Abschlusskonten für Bilanz und GuV) Abschluss
+
+          + 98 Ergebniskonten
+               o 989 Gewinn- und Verlustkonto (GuV)
+          + 99 Bilanzkonten
+               o 998 Eröffnungsbilanzkonto
+               o 999 Schlussbilanzkonto

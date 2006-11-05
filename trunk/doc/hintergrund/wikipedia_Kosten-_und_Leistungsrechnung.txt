@@ -1,0 +1,108 @@
+Kosten- und Leistungsrechnung
+==================================
+
+aus Wikipedia, der freien Enzyklopädie
+http://de.wikipedia.org/wiki/Kosten-_und_Leistungsrechnung
+
+Kostenrechnung, genauer Kosten- und Leistungsrechnung, abgekürzt KLR
+oder auch KORE , ist ein Aufgabengebiet der Betriebswirtschaftslehre.
+
+Sie ist Teil des internen Rechnungswesens und unterliegt im Vergleich
+zur Finanzbuchhaltung (Fibu) kaum gesetzlichen Vorschriften.
+
+
+Zielsetzung
+--------------
+
+Die Kosten- und Leistungsrechnung (KLR) ist ein institutionalisiertes
+Informationssystem, das alle wirtschaftlich auswertbaren Vorgänge der
+Informationsgewinnung und Informationsverarbeitung über angefallene
+oder geplante Geschäftsvorgänge beinhaltet und vorwiegend an
+Unternehmensinterne gerichtet ist.
+
+Die KLR dient der Ermittlung von Kosten- und Leistungsinformationen
+zur Lösung operativer Managementaufgaben.
+
+Ziele und Aufgaben der KLR sind die Wirtschaftlichkeitskontrolle der
+Abteilungen bzw. Betriebe, die Kalkulation und Bewertung der
+Kostenträger, somit auch Informationsbeschaffung für Produkt- und
+Preispolitik und der Ermöglichung der Umsetzung einer kurzfristigen
+Erfolgsrechnung KER. Voraussetzung ist eine korrekte Kostenerfassung.
+
+Grundsätzlich gilt für die Einführung oder Beibehaltung der
+Kostenrechnung, dass diese Aufgaben selbst nicht mehr Kosten
+verursachen dürfen, als sie Einsparungen und Wertschöpfung - im Sinne
+der Informationsbeschaffung - für den Betrieb bringen.
+
+Datenermittlung und -aufbereitung
+------------------------------------
+
+Die KLR erhält ihre Rohdaten aus der Finanz- und Steuerbuchhaltung,
+der Betriebsstatistik, aus externen Quellen sowie durch
+Eigenerstellung (zum Beispiel kalkulatorische Kosten). Die KLR ist
+heute in größeren Unternehmen Bestandteil von ERP-Systemen und bezieht
+aus diesen Systemen viele Rohdaten wie z.B. Arbeitspläne und
+Stücklisten für die Kalkulation und Ausführungszahlen von Prozessen
+für eine Prozesskostenrechnung.
+
+Die Aufbereitung und Verarbeitung dieser Rohdaten erfolgt nach
+bestimmten Kriterien der Kostenentstehung und -aufteilung: Man spricht
+allgemein von der Abgrenzungsrechnung, im Speziellen dann von der
+Kostenartenrechnung, Kostenstellenrechnung und Kostenträgerrechnung.
+
+Diese Daten werden dann laufend in ein Kostenrechnungssystem
+übernommen:
+
+
+Systeme der Kostenrechnung
+-----------------------------
+
+Sowohl historisch als auch methodisch unterscheidet man zwischen
+verschiedenen Systemen der Kostenrechnung und ihren Ausprägungen, die
+sich inhaltlich oft überschneiden:
+
+  * Vollkostenrechnung, seit etwa 1950, sowie auch heute noch in
+    Kleinbetrieben. Ausprägungen:
+
+          + Plankostenrechnung
+          + Normalkosten
+          + Kontrollrechnung
+          + Istkosten
+
+  * Teilkostenrechnung, seit etwa 1975, moderner und genauer als die
+    Vollkostenrechnung. Erfordert aber intensiven EDV-Einsatz.
+    Ausprägungen:
+
+       + Deckungsbeitragsrechnung im eigentlichen Sinne (zum Beispiel
+         Fixkostendeckungsrechnung)
+
+       + Direct Costing
+
+       + Target Costing im eigentlichen Sinne (beziehungsweise Target
+         Pricing)
+
+  * Prozesskostenrechnung (Activity Based Costing), geht historisch
+    auf die Vollkostenrechnung zurück
+
+  * Zielkostenrechnung im weiteren Sinne als Instrument des
+    Controlling, vergleiche Target/Direct Costing im weiteren Sinne
+
+  * Profit-Center-Rechnung als Erweiterung der Kostenstellenrechnung
+    zur Ergebnisermittlung auf Abteilungs- und Geschäftsbereichsebene.
+
+  * Projektkostenrechnung
+
+Zum Teil werden bestimmte praktische Gebiete des Operations Research
+auch als Zusatzaufgaben der Kostenrechnung gesehen.
+
+siehe auch: Betriebsnotwendiges Vermögen
+
+Literatur
+------------
+
+     * Gerhard Seicht: Moderne Kosten- und Leistungsrechnung. Linde, Wien
+       1997, ISBN 3-85122-708-5
+     * Harald  Hungenberg,  Lutz  Kaufmann:  Kostenmanagement. Oldenburg,
+       München 2001, ISBN 3-486-25574-6
+     * Uwe  Götze,  Christian  Bosse: Kostenrechnung und Kostenmanagement
+       Springer, Berlin 2004, ISBN 3-540-00584-6
