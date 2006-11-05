@@ -1,0 +1,37 @@
+#!/bin/bash
+# 
+# check if bases are current -- part of the Kontenrahmen-Project
+# (c) Copyright 2006 by Hartmut Goebel <h.goebel@goebel-consult.de>
+#
+
+function checkit() {
+    file=$1
+    url=$2
+    svn update "$file"
+    lynx --dump "$url" > "$file"
+    status=$( svn status "$file" )
+    status=${status//% */}
+    if [ "$status" = "M" ] ; then
+	echo ; echo
+	echo "###"
+	echo "###  Grundlage für $file wurde geändert"
+	echo "###"
+	echo ; echo
+	svn diff "$file"
+	exit 1
+    fi
+}
+
+(( res = 0 ))
+
+# Bilanz -- HGB § 266
+checkit "bilanz/hgb_266.txt" "http://bundesrecht.juris.de/hgb/__266.html"
+(( res = res + $? ))
+
+# GuV -- HGB § 275
+checkit "guv/hgb_275.txt" "http://bundesrecht.juris.de/hgb/__275.html"
+(( res = res + $? ))
+
+if [ "$res" -eq 0 ]; then
+    echo 'alles noch aktuell'
+fi
