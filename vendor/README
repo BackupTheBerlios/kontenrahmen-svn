@@ -1,0 +1,28 @@
+
+Vendor branches for the 'kontenplan' project'
+==============================================
+
+xlrd 
+  Python xlrd package for extracting data from Excel files.
+
+  Source: http://www.lexicon.net/sjmachin/xlrd.htm
+
+
+Tipps, Tricks, Snippets
+----------------------------  
+
+REPOS=svn+ssh://htgoebel@svn.berlios.de/svnroot/repos/kontenrahmen
+
+svn import xlrd-0.5.2/ \
+    ${REPOS}/vendor/xlrd/current \
+    -m 'importing initial xlrd-0.5.2 vendor drop'
+
+svn copy \
+    ${REPOS}/vendor/xlrd/current \
+    ${REPOS}/vendor/xlrd/0.5.2 \
+    -m 'tagging xlrd-0.5.2'
+
+svn copy \
+    ${REPOS}/vendor/xlrd/0.5.2/xlrd \
+    ${REPOS}/trunk/lib/xlrd \
+    -m 'bringing xlrd-0.5.2 into the main branch'
