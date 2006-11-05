@@ -11,18 +11,48 @@
 #             finanzamtsliste) and rebuild dependencies
 #
 #
+import sys
+import csv
 
 # Store signatures in ".sconsign.dbmlite" in the top-level directory.
 SConsignFile()
 
-env = Environment()
-env.AppendENVPath('PYTHONPATH', Dir('#/lib').abspath)
+lib_dir = Dir('#/lib')
+sys.path.insert(0, lib_dir.abspath)
 
-Export('env')
+import gliederung
+
+env = Environment()
+env.AppendENVPath('PYTHONPATH', lib_dir.abspath)
+
+def gliederung2csv(target, source, env):
+    """
+    Convert Bilanz/GuV/BWA-Gliederung to a CSV list.
+    """
+    items = gliederung.readGrouping(str(source[0]))
+    csv_writer = csv.writer(open(str(target[0]), 'wb'))
+    last_text = ''
+    for num, text in items:
+        if num is None:
+            # section head
+            row = ['', text, '','']
+        else:
+            if num[-1].startswith('-'):
+                text = '- ' + text
+            row = [' '.join(num),
+                   text,
+                   ''.join(num),
+                   ''.join(num)+'|'+text,
+                   ]
+        csv_writer.writerow(row)
+        last_text = text
+
+
+Export('env', 'gliederung2csv')
 
 env.SConscript(dirs=[Dir('finanzamtsliste'),
-                     #Dir('bilanz', build_dir),
-                     #Dir('guv', build_dir),
+                     Dir('bilanz'),
+                     Dir('guv'),
                      #Dir('bwa', build_dir),
                      #Dir('skr03', build_dir),
                      ])

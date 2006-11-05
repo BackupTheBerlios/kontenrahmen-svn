@@ -1,0 +1,11 @@
+# -*- mode: python -*-
+#
+# SConscript for 'bilanz' -- Part of the Kontenrahmen-Project
+# (c) Copyright 2006 by Hartmut Goebel <h.goebel@goebel-consult.de>
+#
+
+Import('env', 'gliederung2csv')
+
+env.Command('gliederung-bilanz.csv',
+            'gliederung-bilanz.cfg',
+            gliederung2csv)

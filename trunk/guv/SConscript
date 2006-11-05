@@ -1,0 +1,11 @@
+# -*- mode: python -*-
+#
+# SConscript for 'guv' -- Part of the Kontenrahmen-Project
+# (c) Copyright 2006 by Hartmut Goebel <h.goebel@goebel-consult.de>
+#
+
+Import('env', 'gliederung2csv')
+
+env.Command('gliederung-guv.csv',
+            'gliederung-guv.cfg',
+            gliederung2csv)
