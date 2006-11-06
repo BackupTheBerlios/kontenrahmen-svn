@@ -65,7 +65,6 @@ def readSheet(filename, sheetname=None, sheetindex=0, keep_floats=True):
         sheet = book.sheet_by_name(sheetname)
     else:
         sheet = book.sheet_by_index(sheetindex)
-    print sheetname, sheetindex, sheet
     for row in range(sheet.nrows):
         row = sheet.row(row)
         if not keep_floats:
