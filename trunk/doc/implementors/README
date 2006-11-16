@@ -1,0 +1,50 @@
+
+Documentation for Implementors using Data from kontenrahmen.berlios.de
+=========================================================================
+
+Dokumentation für Implemenatoren, die Daten des Kontenrahmen-Projekts nutzen
+==============================================================================
+
+$Id$
+
+Für dieses Verzeichnis ist geplant:
+
+Dokumentation für Leute die ein ERP/FiBu-Programm implementieren und
+dazu Daten des Kontenrahmen-Projekts für verwenden möchten.
+
+Welche Daten stehen zur Verfügung?
+---------------------------------------
+
+Kontenpläne
+~~~~~~~~~~~~~
+
+skr03/
+   Kontenplan als CSV-Tabelle. Je Konto
+
+    - Kontonummer
+    - Bezeichnung lang
+    - Bezeichnung kurz (ca. 20 em breit)
+ 
+    - Steuerautomatik *)
+    - Abschnitt der BWA, in den das Konto gehört *)
+    - Abschnitt der GuV, in den das Konto gehört *)
+    - Abschnitt der Bilanz, in den das Konto gehört *)
+
+    *) so zutreffend
+
+bilanz/
+guv/
+   Struktur für Bilanz, GuV
+
+bwa/
+
+
+finanzamtsliste/
+   - Verzeichnis der Finanzämter
+   - Zuordnung PLZ zum Finanzamt (über BUFA-Nr)
+   - Aufbau der Steuernummern je Bundesland
+
+
+Aufbau der Daten
+----------------------
+... todo ...
