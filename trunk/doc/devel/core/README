@@ -1,0 +1,56 @@
+
+Dokumentation for Core Developers of kontenrahmen.berlios.de
+===============================================================
+
+Dokumentation für die Kern-Entwickler des Kontenrahmen-Projekts
+================================================================
+
+$Id$
+
+Die Dokumentation in diesem Verzeichniss ist nur dann für Sie
+interessant, wenn Sie an der Website, dem Subversion-Repository und
+ähnlichem mitarbeiten. Die tun üblicherweise nur die
+Kern-Entwicklungsmanschaft. Dennoch kann die Dokumentation interessant
+sein, um daraus für andere Projekte zu lernen.
+
+Struktur Subversion-Repositiory
+-----------------------------------
+
+Repos-Basis (REPOS):
+   svn+ssh://<developername>@svn.berlios.de/svnroot/repos/kontenrahmen
+
+$REPOS/trunk		die üblichen Verzeichnisse
+$REPOS/tags
+$REPOS/branches
+
+$REPOS/vendor		Vendor-Branches
+$REPOS/vendor/README	Dokumentation, Tipps und Tricks (für den, der
+			Vendor-Branches pflegt)
+
+$REPOS/www/trunk	Inhalt der Website
+			Der Inhalt wird beim commit automatisch auf
+			den Webspace kopiert (über einen post-commit-
+			Hook)
+
+$REPOS/svn-server/trunk	Skripte für die SVN- und Shell-Server
+			bei Berlios (z.B. die svn-hooks, etc.)
+
+$REPOS/www/tags		gibt es auch, sind aber ungenutzt
+$REPOS/www/branches	
+$REPOS/svn-server/tags
+$REPOS/svn-server/branches
+
+
+Automatisches Erzeugen von Releases
+---------------------------------------
+[geplant]
+scons release
+scons upload
+Auf <https://developer.berlios.de/project/admin/editpackages.php?group_id=7635>
+gehen und files releasen.
+
+Ideen
+-----------
+- regelmäßig automatisch prüfen, ob sich eine der
+  Datenbasen (HBG, Finanzamtsdaten) geändert hat. Wenn ja, dann eine
+  Mail an die Projekt-Admins schicken.
