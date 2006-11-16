@@ -1,0 +1,50 @@
+#!/usr/bin/env python
+#
+# Copyright (C) 2006 Hartmut Goebel <h.goebel@goebel-consult.de>
+# Licence: GPL, see kontenrahmen.berlios.de
+#
+
+import sys, os
+#from subprocess import *
+import commands
+
+svnlook = '/usr/bin/svnlook'
+
+web_dir_repos = 'www/trunk/'
+target_dir    = '/home/groups/kontenrahmen/htdocs'
+
+def run(*args):
+    #return Popen(args, stdout=PIPE).communicate()[0]
+    cmd = ''.join([commands.mkarg(x) for x in args])
+    return commands.getoutput(cmd)
+
+try:
+    repos = sys.argv[1]
+    revision = sys.argv[2]
+except IndexError:
+    sys.exit('Not enought parameters given')
+
+changed_files = run(svnlook, '-r', revision, 'changed', repos).splitlines()
+
+for changed in changed_files:
+    stat, changed = changed.split(None,1)
+    if changed.startswith(web_dir_repos):
+        stat = stat[0]
+        filename = os.path.join(target_dir, changed[len(web_dir_repos):])
+        dirname = os.path.join(os.path.dirname(filename), '')
+        if dirname == filename:
+            # it's a directory
+            if stat == 'D':
+                os.rmdir(dirname)
+                continue
+        if not os.path.exists(dirname):
+            os.makedirs(dirname)
+        if dirname != filename:
+            # it's a file
+            if stat == 'D':
+                os.remove(filename)
+                continue
+            #call(svnlook, '-r', revision, 'cat', repos, changed,
+            #     stdout=(open(filename, 'wb')))
+            data = run(svnlook, '-r', revision, 'cat', repos, changed)
+            open(filename, 'wb').write(data)
