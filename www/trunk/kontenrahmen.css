@@ -19,37 +19,41 @@
     border-color: gray;  /* Farbangleichung an den Internet Explorer  */
   }
 
-  div#Navigation {
+  div#linkespalte {
     font-size: 0.83em;
     float: left; width: 18em;
+  }
+  div#linkespalte div {
     margin: 0 0 1.2em; padding: 0;
     border: 1px dashed silver;
   }
-  div#Navigation li {
+  div#linkespalte li {
     list-style: none;
     margin: 0; padding: 0.5em;
   }
-  div#Navigation a {
+  div#linkespalte a {
     display: block;
     padding: 0.2em;
     font-weight: bold;
   }
-  div#Navigation a:link {
+  div#linkespalte a:link {
     color: black; x-background-color: #eee;
   }
-  div#Navigation a:visited {
+  div#linkespalte a:visited {
     color: #666; x-background-color: #eee;
   }
-  div#Navigation a:hover {
+  div#linkespalte a:hover {
     color: black; x-background-color: white;
   }
-  div#Navigation a:active {
+  div#linkespalte a:active {
     color: white; x-background-color: gray;
   }
 
-  div.sponsoren { text-align:center;}
-  div.sponsoren h3 { margin-bottom:0em; padding-top:2em }
-  img { border:0 }
+  div.sponsoren { text-align:center; }
+  div.sponsoren h3 { margin-bottom:0em;  }
+  div.sponsoren img { margin-bottom:1em; }
+  div.related h3 { text-align:center; margin-bottom:0em;}
+  img { border:0; }
 
   div#Info {
     font-size: 0.9em;
