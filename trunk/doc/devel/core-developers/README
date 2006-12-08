@@ -43,6 +43,11 @@ $REPOS/svn-server/branches
 
 Automatisches Erzeugen von Releases
 ---------------------------------------
+[vorläufig]
+./release.sh 2006-20070101 skr03/skr03.xls skr03/skr03.ods
+Auf <https://developer.berlios.de/project/admin/editpackages.php?group_id=7635>
+gehen und files releasen.
+
 [geplant]
 scons release
 scons upload
